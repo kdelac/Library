@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Library.Models.SpojKa>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor.ime) @Html.DisplayNameFor(model => model.Autor.prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Knjiga.naslov)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Knjiga.zanr.naziv)
+        </th>
+
+    </tr>
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor.ime) @Html.DisplayFor(modelItem => item.Autor.prezime)
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.Knjiga.naslov)
+            </td>
+
+            <td>
+
+                @Html.DisplayFor(modelItem => item.Knjiga.zanr.naziv)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id=item.Knjiga.id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Library.Models.korisnik>
+
+@{
+    ViewBag.Title = "Korisnik";
+}
+
+<h2>Korisnik</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OIB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.e_mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OIB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.e_mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "IzbrisiKorisnika", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
